@@ -1,6 +1,5 @@
 
 function HomeItems({item}) {
-
   return <>
 
     <div className="item-container">
@@ -15,7 +14,7 @@ function HomeItems({item}) {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag" onclick="addToBag({item.id})">Add to Bag</button>
+      <button className="btn-add-bag">Add to Bag</button>
     </div>
 
   </>;

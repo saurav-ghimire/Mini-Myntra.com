@@ -1,26 +1,16 @@
+import { useSelector } from "react-redux";
 import HomeItems from "../components/HomeItem"
 
-const item =   {
-  id: '001',
-  image: './images/1.jpg',
-  company: 'Carlton London',
-  item_name: 'Rhodium-Plated CZ Floral Studs',
-  original_price: 1045,
-  current_price: 606,
-  discount_percentage: 42,
-  return_period: 14,
-  delivery_date: '10 Oct 2023',
-  rating: {
-      stars: 4.5,
-      count: 1400,
-  },
-};
 
 function Home() {
+  const items = useSelector(store => store.items);
+   
   return <>
   <main>
         <div className="items-container">
-          <HomeItems item={item}/>
+          {items.map((data) => (
+            <HomeItems key={data.id} item={data}/>            
+            ))}
         </div>
     </main>
   </>;
