@@ -1,5 +1,16 @@
+import { useDispatch } from "react-redux";
+
+import { bagsActions } from "../store/bagsSlice";
 
 function HomeItems({item}) {
+  
+  const dispatch = useDispatch();
+
+  const handleAddToBags = (item) => {
+    dispatch(bagsActions.addToBag({
+      payload : item.id
+    }))
+  }
   return <>
 
     <div className="item-container">
@@ -14,7 +25,8 @@ function HomeItems({item}) {
           <span className="original-price">Rs {item.original_price}</span>
           <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag">Add to Bag</button>
+      <button className="btn-add-bag" onClick={() => handleAddToBags(item)}>Add to Bag</button>
+      <button className="btn-add-bag" onClick={() => handleAddToBags(item)}>Remove from Bag</button>
     </div>
 
   </>;

@@ -4,6 +4,7 @@ import {useSelector} from "react-redux"
 
 function Bags() {
   const items = useSelector(store => store.items);
+  
     return <>
   <main>
       <div className="bag-page">
