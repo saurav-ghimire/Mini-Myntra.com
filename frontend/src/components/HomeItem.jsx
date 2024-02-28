@@ -12,7 +12,11 @@ function HomeItems({item}) {
   const dispatch = useDispatch();
 
   const handleAddToBags = (item) => {
-    dispatch(bagsActions.addToBag(item.id))
+    dispatch(bagsActions.addToBag(item.id));
+  }
+
+  const handleRemove = () => {
+    dispatch(bagsActions.removeFromBag(item.id));
   }
   return <>
 
@@ -30,7 +34,7 @@ function HomeItems({item}) {
       </div>
       
       {
-        !isOnBag ? <button className="btn-add-bag" onClick={() => handleAddToBags(item)}><IoMdAddCircleOutline /> Add to Bag</button>  : <button className="btn-add-bag btn btn-danger" onClick={() => handleAddToBags(item)}> <MdDelete /> Remove</button>
+        !isOnBag ? <button className="btn-add-bag" onClick={() => handleAddToBags(item)}><IoMdAddCircleOutline /> Add to Bag</button>  : <button className="btn-add-bag btn btn-danger" onClick={handleRemove}> <MdDelete /> Remove</button>
       }
       
 

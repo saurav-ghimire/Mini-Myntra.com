@@ -3,16 +3,23 @@ import BagsSummary from "../components/BagsSummery";
 import {useSelector} from "react-redux"
 
 function Bags() {
-  const items = useSelector(store => store.items);
+  const bags = useSelector((store) => store.bags );
+  const items = useSelector((store) => store.items );
+  const finalItems = items.filter(index => {
+    const itemIndex = bags.indexOf(index.id);
+    return itemIndex >= 0;
+  }
+  )
   
     return <>
   <main>
       <div className="bag-page">
         <div className="bag-items-container">
-          <BagItems item={items[0]} />
+        {finalItems.map(item => <BagItems item={item} />)}
+          
         </div>
         <div className="bag-summary">
-          <BagsSummary />
+          {/* <BagsSummary /> */}
         </div>
       </div>
     </main>
