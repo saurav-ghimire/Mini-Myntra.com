@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './routes/App.jsx'
 import Bags from './routes/bags.jsx'
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.css';
 
 import {
   createBrowserRouter,

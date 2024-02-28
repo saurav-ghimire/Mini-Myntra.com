@@ -465,3 +465,9 @@ a.action_container:link {
   height: 14px;
   cursor: pointer;
 }
+
+/* .nav_bar a */
+
+.nav_bar a{
+  padding: 0;
+}
