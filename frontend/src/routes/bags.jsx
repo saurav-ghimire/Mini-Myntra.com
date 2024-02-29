@@ -19,7 +19,7 @@ function Bags() {
           
         </div>
         <div className="bag-summary">
-          {/* <BagsSummary /> */}
+          <BagsSummary />
         </div>
       </div>
     </main>
